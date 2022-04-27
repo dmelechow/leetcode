@@ -18,8 +18,7 @@ fun merge(nums1: IntArray, m: Int, nums2: IntArray, n: Int): Unit {
     while(p2 >=0 ){
         if(p1 >=0 && nums1[p1] > nums2[p2]){
             nums1[i--] = nums1[p1--];
-        } 
-        else{
+        } else {
             nums1[i--] = nums2[p2--];
         }
     }
