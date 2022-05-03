@@ -26,30 +26,27 @@ fun removeNthFromEnd(head: ListNode?, n: Int): ListNode? {
 fun removeNthFromEnd(head: ListNode?, n: Int): ListNode? {
     if(head == null) return null
 
-    var curr: ListNode? = head
+    var start = ListNode(0)
+    start.next = head
 
-    var countNodes  = 1
+    var curr: ListNode? = start
+
+    var countNodes  = 0
 
     while (curr != null) {
+        curr = curr?.next
         countNodes++
-        curr = curr?.next
     }
-
-    var prev: ListNode? = null
-    curr = head
-
-    var pointer = 1
-
-    while(pointer < countNodes) {
-        if(pointer == countNodes) {
-            prev?.next = curr?.next
-        }
-
-        prev = curr
+    
+    var i = 0
+    curr = start
+    val pos = (countNodes - n) - 1
+    while(i < pos) {
         curr = curr?.next
-        
-        pointer++
+        i++
     }
+            
+    curr?.next = curr?.next?.next
 
-    return head
+    return start.next
 }
