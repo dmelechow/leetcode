@@ -1,9 +1,8 @@
 // https://leetcode.com/explore/featured/card/top-interview-questions-easy/92/array/674/
 
 
-
 fun intersect(nums1: IntArray, nums2: IntArray): IntArray {
-   val res = mutableListOf<Int>()
+    val res = mutableListOf<Int>()
     nums1.sort() 
     nums2.sort()
 
