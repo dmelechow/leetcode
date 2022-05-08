@@ -8,7 +8,7 @@ fun main() {
 fun isPalindrome(s: String): Boolean {
     if(s.isEmpty()) return true
 
-    val lowerS = s.toLowerCase().filter{
+    val lowerS = s.toLowerCase().filter {
         it in 'a'..'z'
     }
     
